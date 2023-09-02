@@ -2,6 +2,7 @@
 
 ```js
 const array = [1, 2, 30, 400];
+
 // result: [2, 4, 60, 800]
 
 const array = [1, 2, 3, 4];
