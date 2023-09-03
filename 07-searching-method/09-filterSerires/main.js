@@ -73,8 +73,13 @@ const array11 = [
 ];
 // id ไม่เท่ากับ 4
 const filterArr11 = array11.filter( (el,index) => el.id != 4 )
-console.log(filterArr11)
+// console.log(filterArr11)
 
+function filterTest(obj,id) {
+    const testId =obj.filter( (el,index) => el.id != id )
+    return testId
+}
+console.log(filterTest(array11,1))
 
 const array12 = [
   { name: 'John', birth: '2001-07-31' },
