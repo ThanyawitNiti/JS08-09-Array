@@ -86,7 +86,11 @@ const array11 = [
   { name: 'banana', age: 18 },
   { name: 'watermelon', age: 32 }
 ];
-const newArr11=array11
+const newArr11=array11.map(function(ageObj) {
+  return ageObj.age
+})
+
+console.log(newArr11)
 // // result: [14, 18, 32]
 
 const array12 = [
@@ -95,6 +99,11 @@ const array12 = [
   { name: 'watermelon', surname: 'Singapore' }
 ];
 // // result: ["apple London", "banana Bangkok", "watermelon Singapore"]
+
+const newArr12 = array12.map( function (arrObj) {
+  return `${arrObj.name} ${arrObj.surname}`
+})
+console.log(newArr12)
 
 const array13 = [
   { name: 'apple', birth: '2000-01-01' },
