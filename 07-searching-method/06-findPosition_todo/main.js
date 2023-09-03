@@ -9,6 +9,6 @@ const tasks = [
 // expexted result: 1
 
 let a = tasks.findIndex((item,index) =>{
-    return tasks.id === 2
+    return item.id === 2
 })
 console.log(a)

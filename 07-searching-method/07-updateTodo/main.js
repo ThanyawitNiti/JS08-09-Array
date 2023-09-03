@@ -9,32 +9,40 @@ const tasks = [
 ];
 
 //searchByid
-// const foundIndex = tasks.findIndex((obj,index) => obj.id == 2)
-
-// //founindex =1
-// if (foundIndex!= -1) {
-//     tasks[foundIndex].name ="traveling"
-// }
-// console.log(tasks)
-
-// function updateTask(id,newTask){
-//     const foundIndex = tasks.findIndex((obj,index) => obj.id == id)
-//     if (foundIndex!= -1) {
-//         tasks[foundIndex].name =newTask
-    
-// }
-// }
-
-// console.log(updateTask(2,'traveling'))
+const foundIndex = tasks.findIndex((obj,index) => obj.id == 2)
+console.log(foundIndex) // index 1 , id =2
+//findIndex 
+// The index of the first element in the array that passes the test. Otherwise, -1.
+//founindex =1
+if (foundIndex!= -1) {
+    tasks[foundIndex].name ="traveling"
+}
+console.log(tasks)
 
 function updateTask(id,newTask){
     const foundIndex = tasks.findIndex((obj,index) => obj.id == id)
     if (foundIndex!= -1) {
-        const newTodo = Object.assign({},tasks[foundIndex])
-        newTodo.name =newTask
-        tasks.splice(foundIndex,1,newTodo)
+        tasks[foundIndex].name =newTask
+    
 }
+return tasks
 }
+console.log(updateTask(2,'traveling'))
 
-console.log(foundIndex)
+
+// function updateTask(id,newTask){
+//   const foundIndex = tasks.findIndex((obj,index) => obj.id == id)
+//   if (foundIndex!= -1) {
+//       const newTodo = Object.assign({},tasks[foundIndex])
+//       newTodo.name =newTask
+//       tasks.splice(foundIndex,1,newTodo)
+// }
+// return foundIndex
+// }
+
+// // console.log(foundIndex)
+// console.log(updateTask(2,'travelling'))
+
+
+
 

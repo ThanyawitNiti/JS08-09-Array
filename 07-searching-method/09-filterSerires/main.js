@@ -31,6 +31,8 @@ console.log(newArray5)
 // ค่าที่เป็นเลขบวก
 
 const array6 = [1, 3, 4, 5, 6, 7, 8];
+const newArray6 = array6.filter (item => item % 3 == 0)
+console.log(newArray6)
 // ค่าที่หาร 3 ลงตัว
 
 const array7 = ['Elephant', 'Ant', 'Cat', 'Eagle', 'Zebra'];
@@ -43,21 +45,26 @@ const filterArr8 = array8.filter((word)=> word.toUpperCase() === word)
 console.log(filterArr8)
 // ค่าที่เป็นตัวพิมพ์ใหญ่ทั้งหมด
 
-/*
-const array = ['Krabi', 'Chonburi', 'Buriram', 'Saraburi','Phrae'];
+
+const array9 = ['Krabi', 'Chonburi', 'Buriram', 'Saraburi','Phrae'];
+const filterArr9 =array9.filter( (word) => word.toLowerCase().includes('buri'))
+console.log(filterArr9)
 // ค่าที่มีคำว่า buri เป็นส่วนประกอบโดยไม่สนใจตัวพิมพ์เล็กหรือตัวพิมพ์ใหญ่
 
-const array = [
+const array10 = [
     { name: 'Ben', age: 14 },
     { name: 'Phil', age: 18 },
     { name: 'John', age: 32 },
     { name: 'Ann', age: 16 },
     { name: 'Paul', age: 24 }
 ];
+// console.log(array10[2].age)
 // อายุไม่น้อยกว่า 18 
+const filterArr10 = array10.filter( (el,index) => el.age >= 18 )
+console.log(filterArr10)
 
 
-const array = [
+const array11 = [
     { id: 1, name: 'Pepsi' },
     { id: 2, name: 'Mirinda' },
     { id: 3, name: 'Coke' },
@@ -65,9 +72,11 @@ const array = [
     { id: 5, name: 'Sprite' }
 ];
 // id ไม่เท่ากับ 4
+const filterArr11 = array11.filter( (el,index) => el.id != 4 )
+console.log(filterArr11)
 
-*/
-const array = [
+
+const array12 = [
   { name: 'John', birth: '2001-07-31' },
   { name: 'Jack', birth: '1990-06-24' },
   { name: 'Jim', birth: '1984-12-13' },
@@ -82,5 +91,5 @@ function filterFn(personObj,index,array) {
     else return false;
 }
 
-const filterLists =array.filter(filterFn)
+const filterLists =array12.filter(filterFn)
 console.log(filterLists);

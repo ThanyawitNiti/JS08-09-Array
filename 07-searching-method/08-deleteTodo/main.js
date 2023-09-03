@@ -19,4 +19,4 @@ function deleteTask(id) {
   }
 }
 
-console.log(deleteTask(1));
+console.log(deleteTask(2));

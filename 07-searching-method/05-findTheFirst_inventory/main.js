@@ -8,10 +8,10 @@ const inventory = [
 ];
 // expected result: { name: 'cherries', quantity: 5 }
 
-let a1 = inventory.find( function(item) {
-    return  item.name === 'cherries' && item.quantity === 5 
-    })
-    console.log(a1)
+// let a1 = inventory.find( function(item) {
+//     return  item.name === 'cherries' && item.quantity === 5 
+//     })
+//     console.log(a1)
 
 
 

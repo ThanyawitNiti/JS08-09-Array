@@ -12,7 +12,7 @@ function clone(arr) {
     return arr.slice();
 }
 const a = clone([1,2,3,4]);
-// นำที่ clone ไปเก็บค่าไว้ใน a ซึ่งเป็น add ใหม่ 
+// นำที่ clone ไปเก็บค่าไว้ใน a ซึ่งเป็น address ใหม่ 
 console.log(a);
 
 

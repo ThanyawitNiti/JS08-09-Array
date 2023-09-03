@@ -11,7 +11,6 @@ const newArray = [];
 for (let obj of sales) {
   let price = obj.price;
   let discount = obj.discount;
-
   let netPrice = price;
   if (discount) {
     netPrice = price * (1 - discount);
