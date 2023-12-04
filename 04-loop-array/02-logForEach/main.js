@@ -20,5 +20,5 @@ console.log(item+1 ,index)
 ); 
 
 
-names.forEach(logPerson)
+names.forEach(logPerson) // create callback function
 
