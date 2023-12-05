@@ -13,8 +13,6 @@
 // arr.slice(0,3) => [1,2,3]
 // ตัวแรกตัวเดียว arr.slice(0,1)
 
-
-
 function first(arr,n) {
     return n == undefined || n ==1 ? arr[0] : 
     arr.slice(0,n)
@@ -22,7 +20,7 @@ function first(arr,n) {
     // if (n == undefined || n == 1) {
     //     return arr.slice(0);
     // } else if (n >1) {
-    //     return 
+    //     return arr.slice(0,n)
     // }
 
 }

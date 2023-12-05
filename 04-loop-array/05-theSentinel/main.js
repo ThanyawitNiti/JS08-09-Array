@@ -8,7 +8,6 @@ let check = true;
 
 do {
   number = +prompt("Enter number");
-
   if (isNaN(number) || number == "") {
     check = false;
   } else {

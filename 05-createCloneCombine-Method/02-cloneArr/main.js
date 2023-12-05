@@ -6,7 +6,7 @@
 // FN : รับ (arr) => return newArr
 function clone(arr) { 
     // return arr; ไม่ได้
-    //สร้าง varibla 
+    // if want to use array after slice,have to assign in new variable
     // const newAarr = arr.slice();
     // return newAarr;
     return arr.slice();

@@ -42,5 +42,3 @@ sales.forEach((obj) =>
   newArr2.push({ newPrice: obj.price * (1 - obj.discount) })
 );
 
-// console.log(sales);
-// console.log(newArr2);
