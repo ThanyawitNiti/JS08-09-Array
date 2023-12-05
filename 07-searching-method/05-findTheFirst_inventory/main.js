@@ -11,14 +11,9 @@ const inventory = [
 // let a1 = inventory.find( function(item) {
 //     return  item.name === 'cherries' && item.quantity === 5 
 //     })
-//     console.log(a1)
-
 
 
 let a = inventory.find( (item) => {
 return item.name === 'cherries' && item.quantity === 5 
-
-
 })
 
-console.log(a)

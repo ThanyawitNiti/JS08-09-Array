@@ -32,6 +32,7 @@ console.log(updateTask(2,'traveling'))
 
 // function updateTask(id,newTask){
 //   const foundIndex = tasks.findIndex((obj,index) => obj.id == id)
+// foundIndex return number of index if not found return -1
 //   if (foundIndex!= -1) {
 //       const newTodo = Object.assign({},tasks[foundIndex])
 //       newTodo.name =newTask
