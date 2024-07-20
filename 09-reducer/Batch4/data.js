@@ -688,3 +688,16 @@ let difCustomer = sales.reduce((acc, item) => {
   acc[item.customer]["totalPrice"] += item.product.unitPrice;
   return acc;
 }, {});
+
+// 3. ยอดขายทั้งหมด (หลังหัก discount)
+let totalSales = sales.reduce((acc,item) =>{
+  // acc.unitPrice * (1-acc.discount)
+  // { acc => total}
+  if(!item['discount']) item['discount'] = 0
+  total = item.product.unitPrice * (1- item.discount )
+  acc +=total
+  return acc
+},0)
+
+
+
