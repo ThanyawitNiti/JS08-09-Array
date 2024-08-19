@@ -683,21 +683,35 @@ let totalTransaction = sales.length;
 
 // 2. จำนวนลูกค้าที่แตกต่างกัน มีใครบ้าง แต่ละคนซื้อไปยอดรวมกันเท่าไหร่ กี่เครื่อง
 let difCustomer = sales.reduce((acc, item) => {
-  if (!acc[item.customer]) acc[item.customer] = { totalPrice: 0, totalPhone: 0 };
+  if (!acc[item.customer])
+    acc[item.customer] = { totalPrice: 0, totalPhone: 0 };
   acc[item.customer]["totalPhone"]++;
   acc[item.customer]["totalPrice"] += item.product.unitPrice;
   return acc;
 }, {});
 
 // 3. ยอดขายทั้งหมด (หลังหัก discount)
-let totalSales = sales.reduce((acc,item) =>{
+let totalSales = sales.reduce((acc, item) => {
   // acc.unitPrice * (1-acc.discount)
   // { acc => total}
-  if(!item['discount']) item['discount'] = 0
-  total = item.product.unitPrice * (1- item.discount )
-  acc +=total
-  return acc
-},0)
+  if (!item["discount"]) item["discount"] = 0;
+  total = item.product.unitPrice * (1 - item.discount);
+  acc += total;
+  return acc;
+}, 0);
 
-
-
+// 4. สินค้าที่ถูกขายมี่กี่ยี่ห้อ แต่ละยี่ห้อขายไปกี่เครื่อง และ ยอดรวมเท่าไหร่
+//count by name
+//total sale
+let result = sales.reduce((acc, item) => {
+  if (!acc[item.product.name])
+    acc[item.product.name] = { totalUnit: 0, totalSale: 0 };
+  if (acc[item.product.name]) {
+    acc[item.product.name].totalUnit += 1;
+    acc[item.product.name].totalSale +=
+      item.product.unitPrice *
+      (1 - (item.discount || 0));
+  }
+  return acc;
+}, {});
+console.log(result, "result");
