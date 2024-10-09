@@ -714,4 +714,19 @@ let result = sales.reduce((acc, item) => {
   }
   return acc;
 }, {});
-console.log(result, "result");
+
+// 5. สินค้าที่ถูกขายมีกี่รุ่นในแต่ละยี่ห้อ แต่ละรุ่นขายไปกี่เครื่อง และ ยอดรวมเท่าไหร่
+let result_ = sales.reduce((acc,item) => {
+  if(!acc[item.product.name]) acc[item.product.name] = {allModel :[], modelName : [], model :0, totalSales:0, totalUnit:0}
+  if(acc[item.product.name]){
+    acc[item.product.name].totalUnit += 1
+    acc[item.product.name].totalSales += item.product.unitPrice * (1 - (item.discount || 0))
+    acc[item.product.name].allModel.push(item.product.model)
+  }
+  const value = acc[item.product.name].modelName.find(el => el === item.product.model ? el : null)
+  if(!value) {
+    acc[item.product.name].modelName.push(item.product.model)
+    acc[item.product.name].model += 1
+  }
+  return acc
+},{});
