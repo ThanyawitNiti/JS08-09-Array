@@ -730,3 +730,11 @@ let result_ = sales.reduce((acc,item) => {
   }
   return acc
 },{});
+
+// หายอดรวมของการจ่ายแต่ละประเภท (Cash, Credit, ...)
+let result_2 = sales.reduce((acc,item)=>{
+  if(!acc[item.type]) acc[item.type] = 0
+  acc[item.type] += item.product.unitPrice * (1 - (item.discount || 0))
+  return acc
+},{})
+console.log(result_2)
