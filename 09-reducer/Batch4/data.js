@@ -731,10 +731,19 @@ let result_ = sales.reduce((acc,item) => {
   return acc
 },{});
 
-// หายอดรวมของการจ่ายแต่ละประเภท (Cash, Credit, ...)
+// 6 .หายอดรวมของการจ่ายแต่ละประเภท (Cash, Credit, ...)
 let result_2 = sales.reduce((acc,item)=>{
   if(!acc[item.type]) acc[item.type] = 0
   acc[item.type] += item.product.unitPrice * (1 - (item.discount || 0))
   return acc
 },{})
-console.log(result_2)
+
+// 7. หายอดรวมในแต่ละวัน
+let result_3 = sales.reduce((acc, item)=>{
+  if(!acc[item.saleDate]) acc[item.saleDate] = 0
+  acc[item.saleDate] += item.product.unitPrice * (1 - (item.discount || 0))
+  return acc
+},{})
+  console.log(result_3)
+// 8. เรียงยอดขายของแต่ละรุ่นจากมากไปน้อย
+// 9. เรียงลูกค้าที่ซื้อมากที่สุดจากมากไปน้อย
