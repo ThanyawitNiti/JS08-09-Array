@@ -744,6 +744,28 @@ let result_3 = sales.reduce((acc, item)=>{
   acc[item.saleDate] += item.product.unitPrice * (1 - (item.discount || 0))
   return acc
 },{})
-  console.log(result_3)
-// 8. เรียงยอดขายของแต่ละรุ่นจากมากไปน้อย
+  
+// 8. เรียงยอดขายของแต่ละรุ่นจากมากไปน้อย --- with method ---
+let result_4 = sales.reduce((acc, item)=>{
+
+  const productName = item.product.name
+  const price = item.product.unitPrice * (1 - (item.discount || 0))
+  
+  const findName =  acc?.find(el => el[0] === productName  )
+
+  if(findName){
+      const findIndex = acc?.findIndex(el => el[0] === productName)
+      acc[findIndex][1]  += item.product.unitPrice * (1 - (item.discount || 0))
+        }
+
+  if(!findName) {
+      const arr = [productName,price]
+      acc?.push(arr)
+    }
+
+  acc.sort((a, b) => b[1] - a[1]);
+  return acc
+  
+},[])
+
 // 9. เรียงลูกค้าที่ซื้อมากที่สุดจากมากไปน้อย
